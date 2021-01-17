@@ -1,0 +1,16 @@
+version: '2'
+services:
+    python:
+        build:
+            context: ../
+            dockerfile: ./dockerfiles/Dockerfile
+        container_name : vjai_paper_coding
+        image: "vjai/ml-tool:gpu"
+        ports:
+            - "8889:8889"
+        volumes:
+            - "..:/data"
+        ipc: host
+        user: vjai
+        working_dir: /data
+        tty: true

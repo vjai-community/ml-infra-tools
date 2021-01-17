@@ -1,0 +1,20 @@
+name: vjai_paper_coding
+channels:
+  - pytorch
+  - anaconda
+  - conda-forge
+dependencies:
+  - python=3.7   # or 2.7
+  - pytorch=1.7.0
+  - torchvision
+  - numpy
+  - libjpeg-turbo
+  - protobuf
+  - jpeg
+  - libtiff
+  - nodejs
+  - pip:
+    - jupyter==1.0.0
+    - jupyterlab==0.35.5
+    - nose==1.3.7
+    - matplotlib
