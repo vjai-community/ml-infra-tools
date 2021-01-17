@@ -6,7 +6,8 @@ Tools for building ML environments &amp; infra
 
 - docker
 - Nvidia Driver
-- nvidia-docker
+- [nvidia-docker](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/overview.html)
+
 
 How to know docker, Nvidia Driver, Nvidia Docker have been installed correctly
 
@@ -39,3 +40,24 @@ The output will be somethings like
 
 
 ```
+
+# How to run
+
+```
+
+$ cd dockerfiles
+$ docker-compose -f docker-compose.yml -f dev-gpu.yml up --build
+
+```
+
+## Test GPU inside
+
+- Open `localhost:8889`
+- Open `Test.ipynb`
+- Run the first code block
+
+    ```python
+    import torch
+    torch.cuda.current_device()
+
+    ```

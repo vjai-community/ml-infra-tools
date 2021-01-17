@@ -1,10 +1,13 @@
-version: '2'
+version: '2.4'
 services:
     python:
         build:
             context: ..
             dockerfile: ./dockerfiles/Dockerfile
         command: jupyter lab --ip=0.0.0.0 --port=8889
+        runtime: nvidia
+        environment:
+            - NVIDIA_VISIBLE_DEVICES=all
 
     tensorboard:
         build:
