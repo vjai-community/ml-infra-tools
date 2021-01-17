@@ -5,6 +5,7 @@ Tools for building ML environments &amp; infra
 # prerequisites
 
 - docker
+- docker-composer
 - Nvidia Driver
 - [nvidia-docker](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/overview.html)
 
@@ -41,6 +42,25 @@ The output will be somethings like
 
 ```
 
+## Configure docker-composer runtime
+
+Update runtime for nvidia-docker
+
+```
+$ cat /etc/docker/daemon.json
+{
+    "runtimes": {
+        "nvidia": {
+            "path": "nvidia-container-runtime",
+            "runtimeArgs": []
+        }
+    }
+}
+
+
+```
+
+
 # How to run
 
 The docker images has Jupyter Lab inside, when you start docker image the Jupyter will automatically launch, and bind to `8889` port on your computer.
@@ -53,6 +73,8 @@ $ cd dockerfiles
 $ docker-compose -f docker-compose.yml -f dev-gpu.yml up --build
 
 ```
+
+
 
 ## Test GPU inside
 
