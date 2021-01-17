@@ -43,6 +43,10 @@ The output will be somethings like
 
 # How to run
 
+The docker images has Jupyter Lab inside, when you start docker image the Jupyter will automatically launch, and bind to `8889` port on your computer.
+
+Happy Coding!!!
+
 ```
 
 $ cd dockerfiles
