@@ -1,0 +1,20 @@
+version: '3'
+services:
+    python:
+        build:
+            context: ""
+            dockerfile: Dockerfile-tensorflow
+        container_name : vjai_paper_coding_tf
+        image: "vjai/tf:gpu"
+        runtime: nvidia
+        ports:
+            - "8889:8888"
+        volumes:
+            - "..:/tf"
+            - "/tmp:/tmp"
+        ipc: host
+        user: vjai
+        working_dir: /tf
+        tty: true
+        command: jupyter lab --ip=0.0.0.0
+
