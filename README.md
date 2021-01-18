@@ -67,12 +67,17 @@ The docker images has Jupyter Lab inside, when you start docker image the Jupyte
 
 Happy Coding!!!
 
+(PyTorch)
 ```
-
 $ cd dockerfiles
 $ docker-compose -f docker-compose.yml -f dev-gpu.yml up --build
-
 ```
+
+(Tensorflow)
+```bash
+docker-compose -f docker-compose-tf.yml -f up --build
+```
+
 
 
 
